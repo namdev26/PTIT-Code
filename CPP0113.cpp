@@ -17,3 +17,4 @@ int main (){
 	else cout << "0"<<endl ;		
 	}
 }
+
