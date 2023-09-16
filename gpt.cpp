@@ -1,29 +1,29 @@
-#include <iostream>
-
+#include <bits/stdc++.h>
+#include <vector>
 using namespace std;
-
-int main() {
-    int t;
-    cin >> t;
-
-    while (t--) {
-        long long n;
-        cin >> n;
-
-        long long sumOfDivisors = 0;
-
-        for (int i = 1; i <= n / 2; i++) {
-            if (n % i == 0) {
-                sumOfDivisors += i;
-            }
-        }
-
-        if (sumOfDivisors == n) {
-            cout << "1" << endl;
-        } else {
-            cout << "0" << endl;
-        }
-    }
-
-    return 0;
+int main()
+{
+	int t;
+	cin >> t;
+	while (t--)
+	{
+		int n, k;
+		cin >> n >> k;
+		vector<int> v;
+		for (int i = 2; i <= sqrt(n); i++)
+		{
+			while (n % i == 0)
+			{
+				v.push_back(i);
+				n /= i;
+			}
+		}
+		if (n != 1)
+			v.push_back(n);
+		if (k > v.size())
+			cout << "-1\n";
+		else
+			cout << v[k - 1] << "\n";
+	}
+	return 0;
 }
