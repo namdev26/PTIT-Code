@@ -1,0 +1,1 @@
+int checkthuannghich(char c[]){
